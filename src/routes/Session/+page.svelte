@@ -48,6 +48,9 @@
         padding: 20px;
         box-sizing: border-box;
         position: relative;
+        background-image: url('/Cooly.webp'); /* Replace with the actual path to the background image */
+        background-size: cover;
+        background-position: center;
     }
 
     textarea {
@@ -56,7 +59,7 @@
         font-family: 'Enchanted Land', sans-serif;
         font-size: 1.5em;
         color: #5c3a1e; /* Dark brown text color */
-        background: none;
+        background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background to improve text visibility */
         border: none;
         outline: none;
         resize: none;
@@ -73,9 +76,6 @@
         top: 0;
         width: 50px;
         height: 100%;
-        background-image: url('/Cooly.png'); /* Image for decoration */
-        background-size: contain;
-        background-repeat: no-repeat;
         opacity: 0.7;
     }
 
