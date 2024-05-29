@@ -1,10 +1,13 @@
 <script>
     import { base } from '$app/paths';
+    import {onMount} from "svelte";
+
+    onMount(()=> console.log("base:" ,base))
 
 </script>
 <main class="Site"> 
     <div class="pic-container">
-                <h1 class="label" id="SP">Session Planner</h1>
+                <h1 class="label" id="SP">Session Planner </h1>
 
         <a href="{base}/Session"><img class="pic"  src="Snip.PNG" alt="Session Planner"></a>
     </div>

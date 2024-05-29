@@ -1,6 +1,10 @@
 <script>
 	import '../app.pcss';
 	import { base } from '$app/paths';
+	import {onMount} from "svelte";
+
+    onMount(()=> console.log("baselay:" ,base))
+
 
 	const myBreadcrumbs = [
 	{ label: 'Session Planner', link: '/Session' },
@@ -12,6 +16,7 @@
 </script>
 
 <ol class="breadcrumb">
+	<a href="{base}/">hem</a>
 	{#each myBreadcrumbs as crumb, i}
 		{#if i < myBreadcrumbs.length}
 			<li class="crumb"><a class="anchor" id={crumb.label} href={crumb.link}>{crumb.label}</a></li>

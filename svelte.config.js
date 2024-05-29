@@ -9,8 +9,8 @@ import adapter from '@sveltejs/adapter-static';
 				// for more information about preprocessors
 				preprocess: [vitePreprocess(), ],
 				extensions: ['.svelte'],
-			
 				kit: {
+					
 					adapter: adapter({
 						pages: 'docs',
 						assets: 'docs',
