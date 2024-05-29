@@ -1,17 +1,39 @@
 <script>
-    let combatants = [];
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
 
-    onMount(()=>{
+    let combatants = [];
+    let listenersAdded = false;
+
+    onMount(() => {
         let combatstore = window.localStorage.getItem("combatants");
 
-        if (combatstore != null){
+        if (combatstore != null) {
             combatants = JSON.parse(combatstore);
-            for (let combatant of combatants){
+            for (let combatant of combatants) {
                 createCombatant(combatant.name, combatant.notes, combatant.initiative, combatant.hp, false);
             }
         }
+
+        if (!listenersAdded) {
+            document.addEventListener('keydown', handleKeyDown);
+            listenersAdded = true;
+        }
     });
+
+    onDestroy(() => {
+        if (listenersAdded) {
+            document.removeEventListener('keydown', handleKeyDown);
+            listenersAdded = false;
+        }
+    });
+
+    function handleKeyDown(event) {
+        if (event.key === '<') {
+            createEmptyCombatant();
+        } else if (event.key === '-') {
+            createPrefilledCombatant();
+        }
+    }
 
     function createNewDiv() {
         const choice = prompt("Enter '1' to add a pre-filled combatant or '2' to add an empty combatant:");
@@ -240,7 +262,7 @@
 <main class="Site">
     <img src="Battlebackground.webp" alt="hej" class="pic">
 
-    <button class="Combatant" on:click={createNewDiv}>Add Combatant</button>
+    <button class="Combatant" on:click={createNewDiv}>Add Combatant (&lt;/-)</button>
         
     <div class="container">
         
@@ -306,4 +328,3 @@
         z-index: 1;
     }
 </style>
-
