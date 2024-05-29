@@ -23,7 +23,7 @@
 
 <style>
     main {
-        background-image:url('Cool.webp');
+        background-image:url('/Cool.webp');
         background-position: center center;
         background-color:#0a0f25;
         background-repeat:no-repeat;

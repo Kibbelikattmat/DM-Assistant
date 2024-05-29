@@ -51,7 +51,7 @@
 	}
 
 	.breadcrumb {
-	background-image: url('Parchment shit.jpg');
+	background-image: url('/Parchment shit.jpg');
 	margin: 0;
 	position: absolute;
 	left: 50%; 
