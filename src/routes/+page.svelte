@@ -1,18 +1,22 @@
+<script>
+    import { base } from '$app/paths';
+
+</script>
 <main class="Site"> 
     <div class="pic-container">
                 <h1 class="label" id="SP">Session Planner</h1>
 
-        <a href="/Session"><img class="pic"  src="/Snip.PNG" alt="Session Planner"></a>
+        <a href="{base}/Session"><img class="pic"  src="/Snip.PNG" alt="Session Planner"></a>
     </div>
     <div class="pic-container" >
                 <h1 class="label" id="RR">Rules Reference</h1>
 
-        <a href="/Rules"><img class="pic" src="/snip3.PNG" alt="Rules Reference"></a>
+        <a href="{base}/Rules"><img class="pic" src="/snip3.PNG" alt="Rules Reference"></a>
     </div>
     <div class="pic-container" >
                 <h1 class="label" id="CA">Combat Assistant</h1>
 
-        <a href="/Combat"><img class="pic" src="/snip4.PNG" alt="Combat Assistant"></a>
+        <a href="{base}/Combat"><img class="pic" src="/snip4.PNG" alt="Combat Assistant"></a>
     </div>
 
 </main> 

@@ -1,5 +1,7 @@
 <script>
 	import '../app.pcss';
+	import { base } from '$app/paths';
+
 	const myBreadcrumbs = [
 	{ label: 'Session Planner', link: '/Session' },
 	{ label: 'Rules Reference', link: '/Rules' },
