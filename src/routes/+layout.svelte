@@ -16,7 +16,7 @@
 <ol class="breadcrumb">
 	{#each myBreadcrumbs as crumb, i}
 		{#if i < myBreadcrumbs.length}
-			<li class="crumb"><a class="anchor" id={crumb.label} href="{base?base:""}/{crumb.link}">{crumb.label}</a></li>
+			<li class="crumb"><a class="anchor" id={crumb.label} href="{base?base:""}{crumb.link}">{crumb.label}</a></li>
 			<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 		{:else}
 			<li class="crumb">{crumb.label}</li>
