@@ -7,7 +7,7 @@
 	const myBreadcrumbs = [
 	{ label: 'Session Planner', link: '/Session' },
 	{ label: 'Rules Reference', link: '/Rules' },
-	{ label: 'DM-ASSISTANT',link:""},
+	{ label: 'DM-ASSISTANT', link:""},
 	{ label: 'Combat Assistant', link: '/Combat' },
 	{ label: 'Main Menu', link: '/' }
 ];
@@ -46,10 +46,10 @@
 	}
 
 	#DM-ASSISTANT:hover, #DM-ASSISTANT:focus{
-		color: #fff;
+		color: #f8f8ff;
 		text-decoration: none;
 		transform: translateY(0);
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+		box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 	}
 
 	.breadcrumb {
