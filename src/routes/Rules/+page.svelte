@@ -1,5 +1,4 @@
 <script>
-    //@ts-nocheck
     const Headers = [
         'Ready', 
         'Unseen attackers and Targets', 
@@ -47,7 +46,7 @@
             <div class="headers">
                 {#each Headers as header, index}
                     <div class="text" 
-                        on:mouseover={() => activeExplanation = index}
+                        on:mouseover={() => activeExplanation = index} 
                         on:mouseout={() => activeExplanation = null}>
                         {header}
                         {#if activeExplanation === index}

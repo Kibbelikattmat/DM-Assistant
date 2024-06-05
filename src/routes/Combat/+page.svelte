@@ -49,7 +49,7 @@ function createNewDiv() {
 
 function createPrefilledCombatant() {
     let initiative = prompt("Enter initiative:");
-    if (initiative === null || initiative.trim() === "") return; // Exit if no input
+    if (initiative === null || initiative.trim() === "") return; 
     initiative = parseInt(initiative, 10);
     if (isNaN(initiative)) {
         alert("Invalid initiative. Please enter a number.");
@@ -57,7 +57,7 @@ function createPrefilledCombatant() {
     }
 
     let hp = prompt("Enter HP:");
-    if (hp === null || hp.trim() === "") return; // Exit if no input
+    if (hp === null || hp.trim() === "") return;
     hp = parseInt(hp, 10);
     if (isNaN(hp)) {
         alert("Invalid HP. Please enter a number.");
@@ -65,10 +65,10 @@ function createPrefilledCombatant() {
     }
 
     let name = prompt("Enter combatant name:");
-    if (name === null || name.trim() === "") return; // Exit if no input
+    if (name === null || name.trim() === "") return; 
 
     let notes = prompt("Enter notes:");
-    if (notes === null) notes = ""; // Allow empty notes
+    if (notes === null) notes = ""; 
 
     createCombatant(name, notes, initiative, hp, true);
 }
@@ -94,9 +94,9 @@ function createCombatant(name, notes, initiative, hp, save) {
     nameSpan.textContent = name;
     nameSpan.style.color = 'yellow';
     nameSpan.contentEditable = 'true';
-    nameSpan.style.whiteSpace = 'pre-wrap'; // Allow text to wrap
-    nameSpan.style.maxWidth = '150px'; // Adjust the width as needed
-    nameSpan.addEventListener('input', updateCombatant); // Save changes
+    nameSpan.style.whiteSpace = 'pre-wrap'; 
+    nameSpan.style.maxWidth = '150px'; 
+    nameSpan.addEventListener('input', updateCombatant); 
 
     const notesSpan = document.createElement('span');
     notesSpan.textContent = notes;
@@ -104,14 +104,14 @@ function createCombatant(name, notes, initiative, hp, save) {
     notesSpan.contentEditable = 'true';
     notesSpan.style.marginLeft = '20px';
     notesSpan.style.marginRight = '20px';
-    notesSpan.style.whiteSpace = 'pre-wrap'; // Allow text to wrap
-    notesSpan.style.maxWidth = '150px'; // Adjust the width as needed
-    notesSpan.addEventListener('input', updateCombatant); // Save changes
+    notesSpan.style.whiteSpace = 'pre-wrap';
+    notesSpan.style.maxWidth = '150px'; 
+    notesSpan.addEventListener('input', updateCombatant); 
 
     const inputWrapper = document.createElement('div');
     inputWrapper.style.display = 'flex';
     inputWrapper.style.alignItems = 'center';
-    inputWrapper.style.flexWrap = 'wrap'; // Allow elements to wrap to new lines if necessary
+    inputWrapper.style.flexWrap = 'wrap';
 
     const initiativeInput = document.createElement('input');
     initiativeInput.type = 'number';
@@ -119,7 +119,7 @@ function createCombatant(name, notes, initiative, hp, save) {
     initiativeInput.style.width = '50px';
     initiativeInput.style.textAlign = 'right';
     initiativeInput.value = initiative;
-    initiativeInput.addEventListener('change', updateCombatant); // Save changes
+    initiativeInput.addEventListener('change', updateCombatant); 
 
     const initiativeText = document.createElement('span');
     initiativeText.textContent = 'Initiative';
@@ -131,14 +131,14 @@ function createCombatant(name, notes, initiative, hp, save) {
     hpWrapper.style.display = 'flex';
     hpWrapper.style.alignItems = 'center';
     hpWrapper.textContent = '';
-    hpWrapper.style.marginLeft = '20px'; // Add some space between initiative and HP
+    hpWrapper.style.marginLeft = '20px'; 
 
     const hpInput = document.createElement('input');
-    hpInput.type = 'text'; // Change to text to allow expressions
+    hpInput.type = 'text'; 
     hpInput.style.width = '50px';
     hpInput.style.textAlign = 'right';
     hpInput.value = hp;
-    hpInput.addEventListener('change', updateCombatant); // Save changes
+    hpInput.addEventListener('change', updateCombatant); 
 
     const hpText = document.createElement('span');
     hpText.textContent = 'HP';
@@ -156,7 +156,7 @@ function createCombatant(name, notes, initiative, hp, save) {
                 try {
                     const result = eval(currentValue + newValue);
                     hpInput.value = result;
-                    updateCombatant(); // Save changes
+                    updateCombatant(); 
                 } catch (error) {
                     alert("Invalid input.");
                 }
@@ -170,12 +170,12 @@ function createCombatant(name, notes, initiative, hp, save) {
     hpWrapper.appendChild(hpInput);
     hpWrapper.appendChild(hpText);
 
-    inputWrapper.appendChild(hpWrapper); // Add the HP wrapper to the main input wrapper
+    inputWrapper.appendChild(hpWrapper); 
 
     const buttonWrapper = document.createElement('div');
     buttonWrapper.style.display = 'flex';
     buttonWrapper.style.flexDirection = 'column';
-    buttonWrapper.style.marginLeft = '10px'; // Add some space between buttons and div
+    buttonWrapper.style.marginLeft = '10px'; 
 
     const duplicateButton = document.createElement('button');
     duplicateButton.textContent = 'Duplicate';
@@ -190,26 +190,26 @@ function createCombatant(name, notes, initiative, hp, save) {
     deleteButton.style.borderColor = 'black';
     deleteButton.style.borderWidth = '3px';
     deleteButton.style.color = 'white';
-    deleteButton.style.marginTop = '5px'; // Add margin between buttons
+    deleteButton.style.marginTop = '5px'; 
     deleteButton.addEventListener('click', () => deleteCombatant(newDiv));
 
     buttonWrapper.appendChild(duplicateButton);
     buttonWrapper.appendChild(deleteButton);
 
     newDiv.appendChild(nameSpan);
-    newDiv.appendChild(notesSpan); // Add notes content between name and initiative
+    newDiv.appendChild(notesSpan);
     newDiv.appendChild(inputWrapper);
-    newDiv.appendChild(buttonWrapper); // Add button wrapper
+    newDiv.appendChild(buttonWrapper); 
     newDiv.style.border = '2px solid yellow';
     newDiv.style.margin = '5px';
     newDiv.style.padding = '10px';
     newDiv.style.flex = '1';
     newDiv.style.display = 'flex';
-    newDiv.style.flexWrap = 'wrap'; // Allow divs to wrap content
+    newDiv.style.flexWrap = 'wrap'; 
     newDiv.style.justifyContent = 'space-between';
     newDiv.style.alignItems = 'center';
-    newDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Add low opacity background color
-    newDiv.classList.add('dynamic-div'); // Add class for better targeting
+    newDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; 
+    newDiv.classList.add('dynamic-div'); 
 
     const container = document.querySelector('.container');
 
@@ -228,9 +228,9 @@ function duplicateCombatant(combatantDiv) {
 
 function deleteCombatant(combatantDiv) {
     const index = Array.from(combatantDiv.parentNode.children).indexOf(combatantDiv);
-    combatants.splice(index, 1); // Remove from combatants array
+    combatants.splice(index, 1); 
     window.localStorage.setItem("combatants", JSON.stringify(combatants)); // Update localStorage
-    combatantDiv.remove(); // Remove the div from the DOM
+    combatantDiv.remove(); 
 }
 
 function updateCombatant() {
@@ -254,7 +254,7 @@ function deleteAllCombatants() {
 
 function sortDivs() {
     const container = document.querySelector('.container');
-    const divs = Array.from(container.getElementsByClassName('dynamic-div')); // Target only dynamic divs
+    const divs = Array.from(container.getElementsByClassName('dynamic-div'));
 
     divs.sort((a, b) => {
         const aValue = parseInt(a.querySelector('input.rank-input').value, 10) || 0;
@@ -328,7 +328,7 @@ function sortDivs() {
 
     .Combatant.smaller {
         padding: 10px 20px;
-        top: 30%; /* Adjust as needed to position under the "Add Combatant" button */
+        top: 30%; 
     }
 
     .pic {
