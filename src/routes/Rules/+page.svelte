@@ -110,7 +110,8 @@
         height: 90vh;
         top: 10vh;
         text-align: center;
-        background-image: url("/Parchment paper.jpg" );
+        background-image: url("/Parchment paper.jpg" );        
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -119,6 +120,7 @@
 
     .site{
         background-image: url('/Parchment shit.jpg');
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
         background-position: center center;
         background-attachment: fixed;
         background-size:contain;

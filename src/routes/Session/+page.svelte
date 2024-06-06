@@ -33,9 +33,6 @@
         justify-content: center;
         align-items: flex-start; 
         height: 100vh;
-        background-image: url('/path/to/dnd-background.jpg'); 
-        background-size: cover;
-        background-position: center;
     }
 
     .note-container {
